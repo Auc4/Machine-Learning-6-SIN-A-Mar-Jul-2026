@@ -1,0 +1,27 @@
+{
+    // Orquestador de todas las imágenes de docker que se creen
+    "name": "ML Workshop 2 - Work Environment",
+    "build" : {
+        "dockerfile" : "Dcockerfile"
+    },
+
+    "customizations" : {
+        "vscode" : {
+            "extensions" : [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-renderers",
+                "charliermarsh.ruff",
+                "ms-azuretools.vscode-containers"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath" : "/app/.venv/bin/python",
+                "jupyter.notebookFileRoot" : "${workspaceFolder}"
+            }
+        }
+    },
+    
+    "postCreateCommand": "echo 'source /app/.venv/bin/activate' >> ~/.bashrc"
+
+
+}
